@@ -17,6 +17,18 @@ import TheWelcome from './components/TheWelcome.vue'
   </main>
 </template>
 
+<script>
+export default {
+  mounted() {
+    const uuid = 'w8f4vy3w4aq';
+    window.Echo.private(`match-details.${uuid}`)
+    .listen('MatchDetails', (e) => {
+        console.log(e);
+    });
+  },
+}
+</script>
+
 <style scoped>
 header {
   line-height: 1.5;
