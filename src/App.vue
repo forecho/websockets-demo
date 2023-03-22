@@ -20,9 +20,10 @@ import TheWelcome from './components/TheWelcome.vue'
 <script>
 export default {
   mounted() {
+    console.log(1);
     const uuid = 'w8f4vy3w4aq';
-    window.Echo.private(`match-details.${uuid}`)
-    .listen('MatchDetails', (e) => {
+    Echo.private(`match-details.${uuid}`)
+    .listen('MatchDetailEvent', (e) => {
         console.log(e);
     });
   },
