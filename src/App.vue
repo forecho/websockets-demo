@@ -22,8 +22,13 @@ export default {
   mounted() {
     console.log(1);
     const uuid = 'w8f4vy3w4aq';
-    Echo.private(`match-details.${uuid}`)
+    Echo.channel(`match-details.${uuid}`)
     .listen('MatchDetailEvent', (e) => {
+        console.log(e);
+    });
+
+    Echo.private('my-yells')
+    .listen('MyYellsEvent', (e) => {
         console.log(e);
     });
   },
