@@ -9,6 +9,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <button @click="sendMessage">Send Message</button>
     </div>
   </header>
 
@@ -23,15 +24,15 @@ export default {
     console.log(1);
     const uuid = 'w8f4vy3w4aq';
     Echo.channel(`match-details.${uuid}`)
-    .listen('MatchDetailEvent', (e) => {
+      .listen('MatchDetailEvent', (e) => {
         console.log(e);
-    });
+      });
 
     Echo.private('my-yells')
-    .listen('MyYellsEvent', (e) => {
+      .listen('MyYellsEvent', (e) => {
         console.log(e);
-    });
-  },
+      });
+  }
 }
 </script>
 
